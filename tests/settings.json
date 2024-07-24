@@ -1,0 +1,9 @@
+{
+    "test_str": "a",
+    "test_int": 10,
+    "test_float": 0.0,
+    "test_dict": {
+        "file": "../file.text",
+        "aaa": 10
+    }
+}
