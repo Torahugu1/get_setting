@@ -4,7 +4,7 @@
 Usage
 -----
 import get_setting
-configDict = get_setting.get_setting("ftpF5","./setting.json")
+configDict = get_setting.get_setting("config","./settings.json")
 '''
 from typing import Any
 import json
@@ -14,8 +14,8 @@ from pathlib import Path
 SETTINGLIKE = str | int | float | dict[str, str | int | float] | None
 
 
-def get_setting(keyname: str, set_json_name: str | Path = "./setting.json") -> SETTINGLIKE:
-    """setting.jsonファイルから辞書型の設定を出力する。
+def get_setting(keyname: str, set_json_name: str | Path = "./settings.json") -> SETTINGLIKE:
+    """settings.jsonファイルから辞書型の設定を出力する。
     設定の中のパスが相対パスの場合は「set_json_nameのディレクトリからの相対パス」として\n
     絶対パスに変換する。
     ただし、相対パスとみなされる文字列は'.'で始まり'/'が含まれるものである。
@@ -25,7 +25,7 @@ def get_setting(keyname: str, set_json_name: str | Path = "./setting.json") -> S
     keyname : str
         読み込みたい設定のキー
     set_json_name : str | Path
-        setting.jsonのパス。デフォルトはカレントディレクトリのsetting.jsonから取得する。
+        settings.jsonのパス。デフォルトはカレントディレクトリのsettings.jsonから取得する。
 
     Returns
     -------
